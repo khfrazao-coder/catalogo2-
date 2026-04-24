@@ -15,34 +15,31 @@
 
     <div class="produto-box">
 
-    <h2>Escolha seu produto:</h2>
+        <h2>Escolha seu produto:</h2>
 
-    <!--Caixa de seleção do produto-->
-    <select id="produto" onchange="mostrarProduto()">
-        <option value="">Selecione um produto</option>
-        <option value="anel">Anel</option>
-        <option value="colar">Colar</option>
-        <option value="conjuntoColar">Conjunto de Colares</option>
-        <option value="conjuntoAnel">Conjunto de Aneís</option>
-    </select>
-    <br><br>
-
-    <p id="nome"></p>
-    <p id="preco"><p>
-
-    <button onclick="limpar()">Limpar</button>
+        <select id="produto" onchange="mostrarProduto()">
+            <option value="">Selecione um produto</option>
+            <option value="anel">Anel</option>
+            <option value="colar">Colar</option>
+            <option value="conjuntoColar">Conjunto de Colares</option>
+            <option value="conjuntoAnel">Conjunto de Aneís</option>
+        </select>
         <br><br>
 
+        <!-- CORRIGIDO -->
+        <p id="nome"></p>
+        <p id="preco"></p>
 
-    <!--Imagem-->
-    <div>
-        <img id="imagemProduto" src="modelo.jpg" alt="Modelo">
-    </div>
+        <button onclick="limpar()">Limpar</button>
+        <br><br>
 
- 
+        <div>
+            <img id="imagemProduto" src="modelo.jpg" alt="Modelo">
+        </div>
 
-    <!--Resultado-->
-    <p id="resultado"></p>
+        <p id="resultado"></p>
+
+    </div> 
 
     <script>
         function mostrarProduto() {
@@ -89,23 +86,21 @@
         }
 
         function limpar() {
-    // limpa o select
-    document.getElementById("produto").value = "";
+            document.getElementById("produto").value = "";
+            document.getElementById("nome").innerText = "";
+            document.getElementById("preco").innerText = "";
 
-    // limpa textos
-    document.getElementById("nome").innerText = "";
-    document.getElementById("preco").innerText = "";
-
-    // volta imagem padrão
-    let imagem = document.getElementById("imagemProduto");
-    imagem.src = "modelo.jpg";
-    imagem.alt = "Modelo";
-}
+            let imagem = document.getElementById("imagemProduto");
+            imagem.src = "modelo.jpg";
+            imagem.alt = "Modelo";
+        }
     </script>
-<footer>
+
+    <footer>
         Localização - Av. Professor Mário Werneck, 2170 - sala 301 - Buritis, Belo Horizonte - MG, 30575-180 <br> 
         Copyright © 2026, todos os direitos reservados.<br><br>
         Desenvolvido por Karen Frazão Dias.
     </footer>
+
 </body>
 </html>
