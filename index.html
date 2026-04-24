@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joalheria Frazão</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!--Cabeçalho-->
+    <header>
+        <img src="cabecalho.png" alt="Banner Joalherias Frazão">
+    </header>
+
+    <div class="produto-box">
+
+    <h2>Escolha seu produto:</h2>
+
+    <!--Caixa de seleção do produto-->
+    <select id="produto" onchange="mostrarProduto()">
+        <option value="">Selecione um produto</option>
+        <option value="anel">Anel</option>
+        <option value="colar">Colar</option>
+        <option value="conjuntoColar">Conjunto de Colares</option>
+        <option value="conjuntoAnel">Conjunto de Aneís</option>
+    </select>
+    <br><br>
+
+    <h2 id="nome"></h2>
+    <h2 id="preco"></h2>
+
+    <button onclick="limpar()">Limpar</button>
+        <br><br>
+
+
+    <!--Imagem-->
+    <div>
+        <img id="imagemProduto" src="modelo.jpg" alt="Modelo">
+    </div>
+
+ 
+
+    <!--Resultado-->
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarProduto() {
+            let produto = document.getElementById("produto").value;
+
+            let nome = document.getElementById("nome");
+            let preco = document.getElementById("preco");
+            let imagem = document.getElementById("imagemProduto");
+
+            if (produto === "anel") {
+                nome.innerText = "Anel";
+                preco.innerText = "R$ 22.000,00";
+                imagem.src = "anel.jpg";
+                imagem.alt = "Imagem do Anel";
+            }
+
+            else if (produto === "colar") {
+                nome.innerText = "Colar";
+                preco.innerText = "R$ 1.500,00";
+                imagem.src = "colar.jpg";
+                imagem.alt = "Imagem do Colar";
+            }
+
+            else if (produto === "conjuntoColar") {
+                nome.innerText = "Conjunto de Colares";
+                preco.innerText = "R$ 8.000,00";
+                imagem.src = "conjunto.jpg";
+                imagem.alt = "Imagem do Conjunto de Colares";
+            }
+
+            else if (produto === "conjuntoAnel") {
+                nome.innerText = "Conjunto de Aneís";
+                preco.innerText = "R$ 6.000,00";
+                imagem.src = "conjuntoAnel.jpg";
+                imagem.alt = "Imagem do Conjunto de Aneís";
+            }
+
+            else {
+                nome.innerText = "";
+                preco.innerText = "";
+                imagem.src = "carregando.jpg";
+                imagem.alt = "Carregando";
+            }
+        }
+
+        function limpar() {
+    // limpa o select
+    document.getElementById("produto").value = "";
+
+    // limpa textos
+    document.getElementById("nome").innerText = "";
+    document.getElementById("preco").innerText = "";
+
+    // volta imagem padrão
+    let imagem = document.getElementById("imagemProduto");
+    imagem.src = "modelo.jpg";
+    imagem.alt = "Modelo";
+}
+    </script>
+<footer>
+        Localização - Av. Professor Mário Werneck, 2170 - sala 301 - Buritis, Belo Horizonte - MG, 30575-180 <br> 
+        Copyright © 2026, todos os direitos reservados.<br><br>
+        Desenvolvido por Karen Frazão Dias.
+    </footer>
+</body>
+</html>
